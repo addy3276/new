@@ -700,6 +700,8 @@ body.modal-open {
 
 /* Video Section Css */
 
+/* Video Section CSS */
+
 * {
   margin: 0;
   padding: 0;
@@ -709,76 +711,118 @@ body.modal-open {
 .hero-section {
   position: relative;
   width: 100%;
-  background-color: #000;
+  background-color: #eeecff;
+  padding: 2rem 1rem;
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.content-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.content-side h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.content-side p {
+  font-size: 1.125rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+.video-side {
+  flex: 1;
+  width: 100%;
 }
 
 .video-container {
   position: relative;
   width: 100%;
-  height: auto;
+  border-radius: 12px;
   overflow: hidden;
-  display: block; /* Added to remove any extra space */
-  line-height: 0; /* Added to remove any extra space below video */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  line-height: 0;
 }
 
 .hero-video {
   width: 100%;
   height: auto;
-  opacity: 0.8;
-  display: block; /* Prevents inline element spacing issues */
-  vertical-align: middle; /* Alternative fix for baseline spacing */
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay-content {
-  text-align: center;
-  color: white;
-  padding: 0 1rem;
-}
-
-.overlay-content h1 {
-  font-size: 1.875rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.overlay-content p {
-  font-size: 1.125rem;
-  margin-bottom: 1.5rem;
+  display: block;
+  vertical-align: middle;
 }
 
 /* Medium screens (md) - 768px and up */
 @media (min-width: 768px) {
+  .hero-section {
+    padding: 3rem 2rem;
+  }
+
+  .hero-container {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .content-side {
+    padding: 2rem;
+  }
+
+  .content-side h1 {
+    font-size: 2.5rem;
+  }
+
+  .content-side p {
+    font-size: 1.25rem;
+  }
+
   .video-container {
-    height: 600px;
+    aspect-ratio: 16 / 9;
   }
 
   .hero-video {
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: contain;
-  }
-
-  .overlay-content h1 {
-    font-size: 3rem;
-  }
-
-  .overlay-content p {
-    font-size: 1.25rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
 /* Large screens (lg) - 1024px and up */
 @media (min-width: 1024px) {
-  .overlay-content h1 {
-    font-size: 3.75rem;
+  .hero-section {
+    padding: 4rem 2rem;
+  }
+
+  .hero-container {
+    gap: 4rem;
+  }
+
+  .content-side h1 {
+    font-size: 3.5rem;
+  }
+
+  .content-side p {
+    font-size: 1.375rem;
+  }
+}
+
+/* Extra large screens - 1280px and up */
+@media (min-width: 1280px) {
+  .content-side h1 {
+    font-size: 4rem;
   }
 }
