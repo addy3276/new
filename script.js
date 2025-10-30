@@ -1,4 +1,4 @@
-// Your testimonial data
+//  TESTIMONIAL DATA
 const testimonials = [
   {
     company: "SQUIRE",
@@ -167,7 +167,8 @@ const testimonials = [
   },
 ];
 
-// Icons
+//  ICONS & TOOLTIPS
+
 const icons = {
   google: "https://telecrm.in/assets/images/testimonial/google-icon.svg",
   video:
@@ -179,66 +180,100 @@ const tooltips = {
   video: "Play Video",
 };
 
-// Create testimonial card HTML
+//  CREATE TESTIMONIAL CARD
 function createTestimonialCard(testimonial) {
   const card = document.createElement("div");
   card.className = "testimonial-card";
 
-  let screenshotHTML = "";
-  if (testimonial.screenshotImage) {
-    screenshotHTML = `
-            <div class="testimonial-screenshot">
-                <img src="${testimonial.screenshotImage}" alt="Screenshot from ${testimonial.name}">
-            </div>
-        `;
-  }
+  let screenshotHTML = testimonial.screenshotImage
+    ? `
+      <div class="testimonial-screenshot">
+        <img src="${testimonial.screenshotImage}" alt="Screenshot from ${testimonial.name}">
+      </div>
+    `
+    : "";
 
   let quoteHTML = "";
   if (testimonial.quote) {
-    quoteHTML = `<p class="testimonial-quote">${testimonial.quote}</p>`;
+    quoteHTML = `
+      <div class="testimonial-quote-container">
+        <p class="testimonial-quote">${testimonial.quote}
+          <span class="read-more"
+            data-company="${testimonial.company}"
+            data-name="${testimonial.name}"
+            data-role="${testimonial.role}"
+            data-quote="${testimonial.quote}"
+            data-profile="${testimonial.profileImage}"
+            data-link="${testimonial.link || ""}"
+            data-type="${testimonial.linkType || ""}"
+          > Read More</span>
+        </p>
+      </div>
+    `;
   }
 
-  let linkHTML = "";
-  if (testimonial.link) {
-    linkHTML = `
-            <button class="testimonial-link-button" data-link="${
-              testimonial.link
-            }" data-type="${testimonial.linkType}">
-                <img src="${icons[testimonial.linkType]}" alt="link">
-                <span>${tooltips[testimonial.linkType]}</span>
-            </button>
-        `;
-  }
+  let linkHTML = testimonial.link
+    ? `
+      <button class="testimonial-link-button" data-link="${
+        testimonial.link
+      }" data-type="${testimonial.linkType}">
+        <img src="${icons[testimonial.linkType]}" alt="link">
+        <span>${tooltips[testimonial.linkType]}</span>
+      </button>
+    `
+    : "";
 
   card.innerHTML = `
-        <h2 class="testimonial-company">${testimonial.company}</h2>
-        ${quoteHTML}
-        ${screenshotHTML}
-        <div class="testimonial-footer">
-            <div class="testimonial-author">
-                <img src="${testimonial.profileImage}" alt="Profile picture of ${testimonial.name}" class="testimonial-profile-image">
-                <div class="testimonial-author-info">
-                    <h3>${testimonial.name}</h3>
-                    <p>${testimonial.role}</p>
-                </div>
-            </div>
-            ${linkHTML}
+    <h2 class="testimonial-company">${testimonial.company}</h2>
+    ${quoteHTML}
+    ${screenshotHTML}
+    <div class="testimonial-footer">
+      <div class="testimonial-author">
+        <img src="${testimonial.profileImage}" alt="Profile picture of ${testimonial.name}" class="testimonial-profile-image">
+        <div class="testimonial-author-info">
+          <h3>${testimonial.name}</h3>
+          <p>${testimonial.role}</p>
         </div>
-    `;
+      </div>
+      ${linkHTML}
+    </div>
+  `;
 
   return card;
 }
 
-// Render testimonials
+// RENDER TESTIMONIALS
+
 function renderTestimonials() {
   const grid = document.getElementById("testimonialGrid");
   testimonials.forEach((testimonial) => {
     const card = createTestimonialCard(testimonial);
     grid.appendChild(card);
   });
+
+  // After rendering, hide "Read More" if not needed
+  filterReadMoreVisibility();
 }
 
-// Video modal functionality
+//  CHECK & HIDE SHORT QUOTES
+function filterReadMoreVisibility() {
+  const quotes = document.querySelectorAll(".testimonial-quote");
+  quotes.forEach((quote) => {
+    const readMore = quote.querySelector(".read-more");
+    const text = quote.textContent.replace("Read More", "").trim();
+    const wordCount = text.split(/\s+/).length;
+    const lineHeight = parseFloat(getComputedStyle(quote).lineHeight);
+    const maxHeight = lineHeight * 2;
+    const isOverflowing = quote.scrollHeight > maxHeight;
+
+    if (wordCount <= 12 && !isOverflowing) {
+      readMore.style.display = "none";
+    }
+  });
+}
+
+//  VIDEO MODAL LOGIC
+
 const modal = document.getElementById("videoModal");
 const closeModalBtn = document.getElementById("closeModal");
 const videoIframe = document.getElementById("videoIframe");
@@ -255,9 +290,7 @@ function closeVideoModal() {
   videoIframe.src = "";
 }
 
-// Event listeners
 closeModalBtn.addEventListener("click", closeVideoModal);
-
 modal.addEventListener("click", (e) => {
   if (
     e.target === modal ||
@@ -273,8 +306,77 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Handle link button clicks
+// READ MORE MODAL LOGIC
+const testimonialModal = document.getElementById("testimonialModal");
+const closeTestimonialModal = document.getElementById("closeTestimonialModal");
+const modalCompany = document.getElementById("modalCompany");
+const modalQuote = document.getElementById("modalQuote");
+const modalAuthor = document.getElementById("modalAuthor");
+const modalLinkContainer = document.getElementById("modalLinkContainer");
+
+let scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+function openTestimonialModal(data) {
+  modalCompany.textContent = data.company;
+  modalQuote.textContent = data.quote;
+  modalAuthor.innerHTML = `
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-top:1rem;">
+      <img src="${data.profile}" style="width:2.5rem;height:2.5rem;border-radius:9999px;object-fit:cover;">
+      <div>
+        <h3 style="font-weight:600;font-size:0.875rem;">${data.name}</h3>
+        <p style="font-size:0.75rem;color:#6b7280;">${data.role}</p>
+      </div>
+    </div>
+  `;
+
+  if (data.link) {
+    modalLinkContainer.innerHTML = `
+      <button class="testimonial-link-button" data-link="${
+        data.link
+      }" data-type="${data.type}">
+        <img src="${icons[data.type]}" alt="link">
+        <span>${tooltips[data.type]}</span>
+      </button>
+    `;
+  } else {
+    modalLinkContainer.innerHTML = "";
+  }
+
+  testimonialModal.classList.add("active");
+  document.body.style.overflow = "hidden";
+  document.body.style.paddingRight = `${scrollbarWidth}px`;
+}
+
+function closeTestimonialPopup() {
+  testimonialModal.classList.remove("active");
+  document.body.style.overflow = "";
+  document.body.style.paddingRight = "";
+}
+
+closeTestimonialModal.addEventListener("click", closeTestimonialPopup);
+testimonialModal.addEventListener("click", (e) => {
+  if (e.target === testimonialModal) closeTestimonialPopup();
+});
+
+//  EVENT HANDLERS
 document.addEventListener("click", (e) => {
+  // Handle Read More click
+  const readMore = e.target.closest(".read-more");
+  if (readMore) {
+    const data = {
+      company: readMore.dataset.company,
+      quote: readMore.dataset.quote,
+      name: readMore.dataset.name,
+      role: readMore.dataset.role,
+      profile: readMore.dataset.profile,
+      link: readMore.dataset.link,
+      type: readMore.dataset.type,
+    };
+    openTestimonialModal(data);
+    return;
+  }
+
+  // Handle video/google link buttons
   const button = e.target.closest(".testimonial-link-button");
   if (button) {
     const link = button.dataset.link;
@@ -288,5 +390,5 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Initialize
+//  INITIALIZE
 renderTestimonials();
