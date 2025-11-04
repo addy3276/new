@@ -242,6 +242,11 @@ function createTestimonialCard(testimonial) {
   return card;
 }
 
+function playVideo() {
+  document.querySelector(".video-placeholder").style.display = "none";
+  document.getElementById("youtube-player").style.display = "block";
+}
+
 // RENDER TESTIMONIALS
 
 function renderTestimonials() {
@@ -249,6 +254,75 @@ function renderTestimonials() {
   testimonials.forEach((testimonial) => {
     const card = createTestimonialCard(testimonial);
     grid.appendChild(card);
+  });
+
+  // STATS BAR
+
+  // function animateNumber(element, duration = 2000) {
+  //   const target = +element.getAttribute("data-target");
+  //   const suffix = element.getAttribute("data-suffix") || "";
+  //   let start = 0;
+  //   const increment = target / (duration / 16); // approx 60fps, increment per frame
+
+  //   function update() {
+  //     start += increment;
+  //     if (start < target) {
+  //       // Display rounded integer number
+  //       element.textContent = Math.floor(start).toLocaleString() + suffix;
+  //       requestAnimationFrame(update);
+  //     } else {
+  //       // Ensure it ends exactly on target
+  //       element.textContent = target.toLocaleString() + suffix;
+  //     }
+  //   }
+
+  //   update();
+  // }
+
+  function animateNumber(element, duration = 2000) {
+    const target = +element.getAttribute("data-target");
+    const suffix = element.getAttribute("data-suffix") || "";
+    let start = 0;
+    const increment = target / (duration / 16);
+
+    function update() {
+      start += increment;
+      if (start < target) {
+        element.textContent = Math.floor(start).toLocaleString() + suffix;
+        requestAnimationFrame(update);
+      } else {
+        element.textContent = target.toLocaleString() + suffix;
+      }
+    }
+
+    update();
+  }
+
+  // Intersection Observer to trigger animation when section is visible
+  const statsSection = document.querySelector(".stats-container");
+  const statNumbers = document.querySelectorAll(".stat-number");
+  let hasAnimated = false;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          hasAnimated = true;
+          statNumbers.forEach((number) => {
+            animateNumber(number);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  observer.observe(statsSection);
+
+  // Animate all stat numbers on page load
+  document.querySelectorAll(".stat-number").forEach((el) => {
+    animateNumber(el);
   });
 
   // After rendering, hide "Read More" if not needed

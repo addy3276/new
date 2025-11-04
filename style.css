@@ -446,7 +446,7 @@ body {
   padding-right: 1rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  margin-top: 4rem;
+  margin-top: 7rem;
 }
 
 .testimonial-container {
@@ -840,6 +840,9 @@ body.modal-open {
     font-size: 2.5rem;
   }
 
+  .content-side h2 {
+    font-size: 1.5rem;
+  }
   .content-side p {
     font-size: 1.25rem;
   }
@@ -879,4 +882,209 @@ body.modal-open {
   .content-side h1 {
     font-size: 4rem;
   }
+}
+
+/* BUTTON CSS */
+
+.get-started-form-container {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.container-get-started-btn {
+  background-color: #7b68ee;
+  border: none;
+  font-size: 18px;
+  padding: 10px 40px;
+  border-radius: 6px;
+  margin-top: 20px;
+  cursor: pointer;
+  margin-left: 0;
+  margin-right: 0;
+  display: inline-block;
+  filter: drop-shadow(0 0 14.5px rgba(188, 188, 188, 0.33));
+  transition: background-color 0.4s ease;
+}
+
+/* Fixed colors */
+.btn-purple {
+  width: fit-content !important;
+  margin: auto;
+  background-color: #7b68ee;
+  color: #fff;
+  filter: drop-shadow(0 0 14.5px rgba(188, 188, 188, 0.33));
+  transition: background-color 0.4s ease;
+}
+
+.btn-purple:hover {
+  background-color: #4f38a2;
+}
+
+.py-3 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+/* STATS CSS */
+.stats-section {
+  margin-top: 6rem;
+}
+
+.stats-container {
+  width: 1140.45px;
+  height: 197.37px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 20px;
+  display: flex;
+  gap: 29.82px;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.stats-heading {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  font-size: clamp(24px, 5vw, 36px);
+}
+
+.stat-card {
+  width: 262.43px;
+  height: 196.91px;
+  position: relative;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 20px;
+  outline: 1px #f2f2f2 solid;
+  outline-offset: -0.5px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 calc(50% - 15px);
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #4b399b;
+  margin-bottom: 10px;
+}
+
+.stat-description {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.3;
+  text-align: center;
+}
+.stat-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+/* Tablet view - 2 cards per row */
+@media (min-width: 768px) {
+  .stat-card {
+    flex: 0 0 calc(50% - 15px);
+    border-radius: 16px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+}
+
+/* Desktop view - 4 cards per row */
+@media (min-width: 1200px) {
+  .stats-container {
+    width: 1140.45px;
+    height: 197.37px;
+    flex-wrap: nowrap;
+  }
+
+  .stat-card {
+    width: 262.43px;
+    height: 196.91px;
+    flex: 1;
+    border-radius: 20px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .stats-container {
+    gap: 15px;
+    padding: 0 10px;
+    margin-top: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .stat-card {
+    flex: 0 0 calc(50% - 7.5px);
+    height: auto;
+    padding: 15px 10px;
+    border-radius: 8px;
+  }
+
+  .stat-number {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .stat-description {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .stats-heading {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-heading {
+    font-size: 24px;
+  }
+}
+
+/* Client Section  */
+.client-section {
+  margin-top: 8rem;
+}
+.client-container {
+  width: 1140.45px;
+  height: 197.37px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 20px;
+  display: flex;
+  gap: 29.82px;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: 3.5rem;
+  flex-wrap: wrap;
+}
+.client-container img {
+  min-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+}
+
+.client-heading {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  font-size: clamp(24px, 5vw, 36px);
 }
