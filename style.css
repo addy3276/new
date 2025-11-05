@@ -1085,6 +1085,294 @@ body.modal-open {
 .client-heading {
   text-align: center;
   font-weight: 500;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   font-size: clamp(24px, 5vw, 36px);
+
 }
+
+/* case study  */
+
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.journey-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 75px;
+  position: relative;
+}
+
+.journey-card {
+  width: 360px;
+  height: 380px;
+  background: white;
+  border-radius: 12px;
+  outline: 1px rgba(0, 0, 0, 0.05) solid;
+  outline-offset: -1px;
+  align-items: center;
+  /* overflow: hidden; */
+  overflow: visible;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.journey-card-center {
+  box-shadow: 0 0 30px 5px rgba(179, 153, 226, 0.6) !important;
+  border-radius: 12px;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.journey-card:hover {
+  transform: translateY(-19px);
+  box-shadow: 0px 12px 30px rgba(241, 235, 253, 0.8);
+}
+
+.journey-content {
+  position: absolute;
+  opacity: 0;
+  transition: none;
+  top: 30px;
+}
+
+/* Exit animations */
+Exit animations */ .journey-content.exit-right {
+  opacity: 1;
+  transform: translate(400px, 30px); /* X movement + maintain Y */
+  animation: slideOutRight 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+.journey-content.exit-left {
+  opacity: 1;
+  transform: translate(-400px, 30px);
+  animation: slideOutLeft 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+/* Enter animations */
+.journey-content.enter-from-left {
+  animation: slideInFromLeft 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+.journey-content.enter-from-right {
+  animation: slideInFromRight 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+    forwards;
+}
+
+/* Keyframes including Y */
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translate(0, 30px);
+  }
+  to {
+    opacity: 0;
+    transform: translate(400px, 30px);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translate(0, 30px);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-400px, 30px);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translate(-400px, 30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 30px);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translate(400px, 30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 30px);
+  }
+}
+
+.journey-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4f38a2;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* .journey-card-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+} */
+.journey-card-description {
+  /* text-align: justify;  */
+  line-height: 1.6;
+  min-height: 120px;
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+}
+
+.journey-card-image {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.journey-card-image img {
+  width: 100px;
+  height: auto;
+}
+
+/* Navigation arrows */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.nav-arrow:hover {
+  background: #4f38a2;
+}
+
+.nav-arrow svg path {
+  stroke: #4f38a2;
+  transition: stroke 0.3s ease;
+}
+
+.nav-arrow:hover svg path {
+  stroke: #fff;
+}
+
+/* Adjusted: perfect position close to middle card but not overlapping */
+.nav-arrow-left {
+  left: calc(50% - 240px);
+}
+
+.nav-arrow-right {
+  right: calc(50% - 240px);
+}
+
+/* Dots under carousel */
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #d3ccef;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #4f38a2;
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .journey-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .journey-card {
+    width: 45%;
+  }
+
+  .nav-arrow-left {
+    left: 40px;
+  }
+
+  .nav-arrow-right {
+    right: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .journey-card {
+    width: 100%;
+  }
+
+  .nav-arrow-left {
+    left: 10px;
+  }
+
+  .nav-arrow-right {
+    right: 10px;
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .carousel-wrapper {
+    overflow: hidden;
+    width: 100%;      /
+  }
+
+  .journey-container {
+    flex-wrap: nowrap; 
+    justify-content: center;
+    gap: 0;
+  }
+
+  .journey-card {
+    width: 90%;       
+    max-width: 360px; 
+    margin: 0 auto;
+  }
+
+  .journey-card:not(:first-child) {
+    display: none;    
+  }
+
+  .nav-arrow {
+    display: none;   
+  }
+} 
+

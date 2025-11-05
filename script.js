@@ -167,6 +167,35 @@ const testimonials = [
   },
 ];
 
+const journeyData = [
+  {
+    title: "The problem",
+    description:
+      "We were selling our own software using various CRMs, but they were either too complex, too expensive, or simply didn’t fit our needs — since none were built around calling and WhatsApp.",
+  },
+  {
+    title: "The birth of Telecrm",
+    description:
+      "And thus, we built a CRM to solve our own problems which eventually evolved into Telecrm — a CRM specific to the Indian market, affordable, simple, and easy to use.",
+  },
+  {
+    title: "From garage to growth",
+    description:
+      "What started from a garage at Aligarh with a small team of 5 people has now grown into a company that serves over 2500+ enterprises.",
+  },
+
+  {
+    title: "Our first customer",
+    description:
+      "Our first customer wasn't just a client — they were the proof that we were on the right path. They’ve grown with us over the years, and their success reminds us every day of why we started.",
+  },
+  {
+    title: "Stay tuned",
+    description: "There's so much more to come!",
+    image: "https://telecrm.in/assets/images/about-us/Group%201000006976.png",
+  },
+];
+
 //  ICONS & TOOLTIPS
 
 const icons = {
@@ -179,6 +208,141 @@ const tooltips = {
   google: "View on Google",
   video: "Play Video",
 };
+
+// CASE STUDY
+let currentSlide = 0;
+const journeyContainer = document.getElementById("journeyContainer");
+const dotsContainer = document.getElementById("dots");
+const totalSlides = journeyData.length;
+
+// Dynamically decide cards per view
+function getCardsPerView() {
+  return window.innerWidth <= 600 ? 1 : 3;
+}
+
+// Render navigation dots
+function renderDots() {
+  dotsContainer.innerHTML = "";
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => updateSlide(i));
+    dotsContainer.appendChild(dot);
+  }
+}
+
+// Update active dot
+function updateDots() {
+  document.querySelectorAll(".dot").forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentSlide);
+  });
+}
+
+// Get visible cards based on current slide
+function getVisibleCards(startIndex) {
+  const visibleData = [];
+  const cardsPerView = getCardsPerView();
+  for (let i = 0; i < cardsPerView; i++) {
+    visibleData.push(journeyData[(startIndex + i) % totalSlides]);
+  }
+  return visibleData;
+}
+
+// Main slide update function
+function updateSlide(index, direction = "next") {
+  const cardsPerView = getCardsPerView();
+  currentSlide = index % totalSlides;
+  if (currentSlide < 0) currentSlide = totalSlides + currentSlide;
+
+  updateDots();
+
+  const visibleData = getVisibleCards(currentSlide);
+  const cardEls = journeyContainer.querySelectorAll(".journey-content");
+
+  cardEls.forEach((cardEl, i) => {
+    cardEl.classList.remove(
+      "active",
+      "enter-from-right",
+      "enter-from-left",
+      "exit-left",
+      "exit-right"
+    );
+
+    // Slide out animation if it has content
+    if (cardEl.innerHTML.trim() !== "") {
+      if (direction === "next") cardEl.classList.add("exit-right");
+      else cardEl.classList.add("exit-left");
+    }
+
+    // Delay to allow exit animation
+    setTimeout(() => {
+      const data = visibleData[i];
+      cardEl.innerHTML = data
+        ? `
+        <div class="journey-card-title">${data.title}</div>
+        <div class="journey-card-description">${data.description}</div>
+        ${
+          data.image
+            ? `<div class="journey-card-image"><img src="${data.image}" alt="${data.title}"></div>`
+            : ""
+        }
+      `
+        : "";
+
+      // Remove exit classes
+      cardEl.classList.remove("exit-right", "exit-left");
+
+      // Slide in from opposite direction
+      if (direction === "next") cardEl.classList.add("enter-from-left");
+      else cardEl.classList.add("enter-from-right");
+
+      cardEl.classList.add("active");
+    }, 400);
+  });
+}
+
+// ======= ARROW EVENTS (DESKTOP ONLY) =======
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+function handleArrowsDisplay() {
+  const isMobile = window.innerWidth <= 600;
+  nextBtn.style.display = isMobile ? "none" : "flex";
+  prevBtn.style.display = isMobile ? "none" : "flex";
+}
+
+nextBtn.addEventListener("click", () => updateSlide(currentSlide + 1, "next"));
+prevBtn.addEventListener("click", () => updateSlide(currentSlide - 1, "prev"));
+
+// ======= MOBILE SWIPE SUPPORT =======
+let startX = 0;
+let isDragging = false;
+
+journeyContainer.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+  isDragging = true;
+});
+
+journeyContainer.addEventListener("touchend", (e) => {
+  if (!isDragging) return;
+  isDragging = false;
+  const diffX = e.changedTouches[0].clientX - startX;
+
+  if (diffX > 50) updateSlide(currentSlide - 1, "prev"); // swipe right
+  else if (diffX < -50) updateSlide(currentSlide + 1, "next"); // swipe left
+});
+
+// ======= WINDOW RESIZE =======
+window.addEventListener("resize", () => {
+  handleArrowsDisplay();
+  updateSlide(currentSlide, "next"); // recalc visible cards
+});
+
+// ======= INITIALIZE =======
+renderDots();
+handleArrowsDisplay();
+updateSlide(0, "next");
 
 //  CREATE TESTIMONIAL CARD
 function createTestimonialCard(testimonial) {
