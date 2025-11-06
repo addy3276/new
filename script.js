@@ -1,169 +1,111 @@
 //  TESTIMONIAL DATA
 const testimonials = [
   {
-    company: "SQUIRE",
+    company: "City Manager, Meraki Spa & Blends",
     quote:
-      "Robin consistently delivers clean, intuitive designs that strike the perfect balance between aesthetic and usability. Whether it’s for a complex workflow or a lightweight self-service feature, the user experience always feels effortless and refined.",
-    name: "Dave Salvant",
-    role: "Co-founder of Squire",
-    profileImage: "https://i.pravatar.cc/100?img=5",
-    link: "https://goo.gl/maps/sfk7N6DVKV9SGUAu9",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+      " ⭐️⭐️⭐️⭐️⭐️I discovered Telecrm to be notably superior in efficiency. It grants me unparalleled insight into the performance of each sales representative.",
+    name: "Bhupendra Adhikari",
+    role: "",
+    profileImage: "images/Bhupendra Adhikari.png",
+    // link: "",
+    // linkType: "",
+    // screenshotImage:
+    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
   },
   {
-    company: "TechCorp",
-    quote: "The team provided an outstanding experience from start to finish .",
-    name: "Sarah Johnson",
+    company: " Paper Planes",
+    quote:
+      "⭐️⭐️⭐️⭐️⭐️With Telecrm, after-sales service has been top-notch. The response has been quite good, and I always receive timely service.",
+    name: "Dr. Prashant Belchandan",
     role: "Product Manager at TechCorp",
-    profileImage: "https://i.pravatar.cc/100?img=6",
-    link: "https://linkedin.com",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+    profileImage: "images/Dr. Prashant Belchandan.png",
+    // link: "https://linkedin.com",
+    // linkType: "google",
+    // screenshotImage:
+    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
   },
   {
-    company: "VideoCorp",
-    quote: "Amazing results, see our video testimonial!",
-    name: "Jane Doe",
-    role: "CEO",
-    profileImage: "https://i.pravatar.cc/100?img=8",
-    link: "https://www.youtube.com/embed/OW25eaCeEjA?autoplay=1&mute=0",
-    linkType: "video",
-    screenshotImage: "	https://telecrm.in/assets/images/testimonial/w2.jpg",
-  },
-  {
-    company: "Innova Labs",
+    company: "Owner, Ideal Dealers Private Limited",
     quote:
-      "Working with them was a seamless process. The designs were not only beautiful but also highly functional.",
-    name: "Michael Chen",
-    role: "CEO of Innova Labs",
-    profileImage: "https://i.pravatar.cc/100?img=7",
-    link: "https://linkedin.com",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+      " ⭐️⭐️⭐️⭐️One of the biggest improvements has been field team tracking. We can now instantly see how many client visits happened each day and which team member visited whom.",
+    name: "Keshav",
+    role: "Owner",
+    profileImage: "images/Keshav.png",
+    // link: "https://www.youtube.com/embed/OW25eaCeEjA?autoplay=1&mute=0",
+    // linkType: "video",
+    // screenshotImage: "	https://telecrm.in/assets/images/testimonial/w2.jpg",
   },
   {
-    company: "Bright Solutions",
+    company: "Villazio Hospitality",
     quote:
-      "They truly understood our requirements and delivered exactly what we envisioned. Couldn’t ask for more.",
-    name: "Emily Carter",
+      " ⭐️⭐️⭐️⭐️⭐️ Brilliant software! Well made. The support and training is mind-blowing. Never seen such care and concern by an after-sales team.",
+    name: "Akhtar Khan",
+    role: "Founder",
+    profileImage: "images/Akhtar Khan.png",
+    // link: "https://linkedin.com",
+    // linkType: "google",
+    // screenshotImage:
+    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+  },
+  {
+    company: " Singh Apple Orchids",
+    quote:
+      " ⭐️⭐️⭐️No need to check on the callers. Calling is quicker and easier than ever! Manager ka kaam kaafi simple ho gaya.",
+    name: "Raaj Perhaate",
     role: "Founder of Bright Solutions",
-    profileImage: "https://i.pravatar.cc/100?img=8",
-    link: "https://linkedin.com",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+    profileImage: "images/Raaj Perhaate.png",
+    // link: "https://linkedin.com",
+    // linkType: "google",
+    // screenshotImage:
+    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
   },
   {
-    company: "Bright Solutions",
+    company: "Yamaha Motor Solutions India Pvt. Ltd.",
     quote:
-      "They truly understood our requirements and delivered exactly what we envisioned. Couldn’t ask for more.",
-    name: "Emily Carter",
-    role: "Founder of Bright Solutions",
-    profileImage: "https://i.pravatar.cc/100?img=8",
-    link: "https://linkedin.com",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+      "⭐️⭐️⭐️⭐️It’s a fantastic CRM that I’ve explored so far! The self-customisation features are unique. Also, their support team is awesome.",
+    name: "Vir Bharat",
+    role: " Head HR Business Partner",
+    profileImage: "images/Vir Bharat.png",
+    // link: "https://linkedin.com",
+    // linkType: "google",
+    // screenshotImage:
+    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
   },
   {
-    company: "Bright Solutions",
+    company: "India Studies",
     quote:
-      "They truly understood our requirements and delivered exactly what we envisioned. Couldn’t ask for more.",
-    name: "Emily Carter",
-    role: "Founder of Bright Solutions",
-    profileImage: "https://i.pravatar.cc/100?img=8",
-    link: "https://linkedin.com",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+      "⭐️⭐️⭐️⭐️⭐️Aap log bohot acha kar rahe ho, amazing job. Your software is amazing, no doubt. Hardly kabhi problem aati hai. Things are good…..",
+    name: "Ananya Hemani",
+    role: " Co-founder,",
+    profileImage: "images/Ananya Hemani.png",
+    // link: "https://linkedin.com",
+    // linkType: "google",
+    // screenshotImage:
+    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
   },
   {
-    company: "Bright Solutions",
+    company: "Brikitt Proptech Pvt. Ltd.",
     quote:
-      "They truly understood our requirements and delivered exactly what we envisioned. Couldn’t ask for more.",
-    name: "Emily Carter",
-    role: "Founder of Bright Solutions",
-    profileImage: "https://i.pravatar.cc/100?img=8",
-    link: "https://linkedin.com",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+      "⭐️⭐️⭐️⭐️⭐️Telecrm has truly transformed the way we manage our sales. It's streamlined our entire process, making follow-ups, lead tracking, and communication far more efficient.",
+    name: "Mohammad Salman",
+    role: " Head – CRM, ",
+    profileImage: "images/Mohammad Salman.png",
+    // link: "https://linkedin.com",
+    // linkType: "google",
+    // screenshotImage:
+    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
   },
   {
-    company: "Bright Solutions",
+    company: "Osaka Group",
     quote:
-      "They truly understood our requirements and delivered exactly what we envisioned. Couldn’t ask for more.",
-    name: "Emily Carter",
-    role: "Founder of Bright Solutions",
-    profileImage: "https://i.pravatar.cc/100?img=8",
-    link: "https://linkedin.com",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
-  },
-  {
-    company: "Bright Solutions",
-    quote:
-      "They truly understood our requirements and delivered exactly what we envisioned. Couldn’t ask for more.",
-    name: "Emily Carter",
-    role: "Founder of Bright Solutions",
-    profileImage: "https://i.pravatar.cc/100?img=8",
-    link: "https://linkedin.com",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
-  },
-  {
-    company: "Bright Solutions",
-    quote:
-      "They truly understood our requirements and delivered exactly what we envisioned. Couldn’t ask for more.",
-    name: "Emily Carter",
-    role: "Founder of Bright Solutions",
-    profileImage: "https://i.pravatar.cc/100?img=8",
-    link: "https://linkedin.com",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
-  },
-  {
-    company: "Bright Solutions",
-    quote:
-      "They truly understood our requirements and delivered exactly what we envisioned. Couldn’t ask for more.",
-    name: "Emily Carter",
-    role: "Founder of Bright Solutions",
-    profileImage: "https://i.pravatar.cc/100?img=8",
-    link: "https://linkedin.com",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
-  },
-  {
-    company: "Bright Solutions",
-    quote:
-      "They truly understood our requirements and delivered exactly what we envisioned. Couldn’t ask for more.",
-    name: "Emily Carter",
-    role: "Founder of Bright Solutions",
-    profileImage: "https://i.pravatar.cc/100?img=8",
-    link: "https://linkedin.com",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
-  },
-  {
-    company: "Bright Solutions",
-    quote:
-      "They truly understood our requirements and delivered exactly what we envisioned. Couldn’t ask for more.",
-    name: "Emily Carter",
-    role: "Founder of Bright Solutions",
-    profileImage: "https://i.pravatar.cc/100?img=8",
-    link: "https://linkedin.com",
-    linkType: "google",
-    screenshotImage:
-      "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+      " ⭐️⭐️⭐️⭐️⭐️I was able to train my entire team within a short span of time because of its simplicity. Telecrm has helped us bring structure to our lead management process across verticals.",
+    name: "Saranya",
+    role: " Customer Relations Manager",
+    profileImage: "images/Saranya.png",
+    // link: "https://linkedin.com",
+    // linkType: "google",
+    // screenshotImage:
+    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
   },
 ];
 
@@ -196,6 +138,35 @@ const journeyData = [
   },
 ];
 
+const faqData = [
+  {
+    question: "What is the main benefit of Telecrm?",
+    answer: `
+      <p>All these 6 parts combined form the user journey, and Telecrm helps you deliver top-notch experience.</p>
+      <ol>
+        <li><b>Lead Management:</b> Easily manage all your leads till they become customers.</li>
+        <li><b>Team management:</b> Your sales grow when your entire team aligns for a single goal.</li>
+        <li><b>Sales growth:</b> Convert more leads with auto/power dialer and WhatsApp follow-ups.</li>
+        <li><b>Retention:</b> Keep customers satisfied for repeat business.</li>
+        <li><b>Upsell/Cross-sell:</b> Encourage customers to buy other services.</li>
+        <li><b>Referral:</b> Help customers bring you more customers.</li>
+      </ol>
+    `,
+  },
+  {
+    question: "How does automatic lead capture work?",
+    answer: `<p>It automatically imports leads from forms, ads, and integrations into your CRM.</p>`,
+  },
+  {
+    question: "Can I import my existing leads?",
+    answer: `<p>Yes, you can easily import your existing leads via CSV or integrations.</p>`,
+  },
+  {
+    question: "How does auto-calling work?",
+    answer: `<p>Auto-calling allows you to automatically dial leads from your CRM, saving time and boosting productivity.</p>`,
+  },
+];
+
 //  ICONS & TOOLTIPS
 
 const icons = {
@@ -210,17 +181,16 @@ const tooltips = {
 };
 
 // CASE STUDY
+
 let currentSlide = 0;
 const journeyContainer = document.getElementById("journeyContainer");
 const dotsContainer = document.getElementById("dots");
 const totalSlides = journeyData.length;
-
-// Dynamically decide cards per view
+const animationTimers = new WeakMap();
 function getCardsPerView() {
   return window.innerWidth <= 600 ? 1 : 3;
 }
 
-// Render navigation dots
 function renderDots() {
   dotsContainer.innerHTML = "";
   for (let i = 0; i < totalSlides; i++) {
@@ -232,14 +202,12 @@ function renderDots() {
   }
 }
 
-// Update active dot
 function updateDots() {
   document.querySelectorAll(".dot").forEach((dot, i) => {
     dot.classList.toggle("active", i === currentSlide);
   });
 }
 
-// Get visible cards based on current slide
 function getVisibleCards(startIndex) {
   const visibleData = [];
   const cardsPerView = getCardsPerView();
@@ -249,100 +217,127 @@ function getVisibleCards(startIndex) {
   return visibleData;
 }
 
-// Main slide update function
+function createCardContent(data) {
+  return `
+    <div class="journey-card-title">${data.title}</div>
+    <div class="journey-card-description">${data.description}</div>
+    ${
+      data.image
+        ? `<div class="journey-card-image"><img src="${data.image}" alt="${data.title}"></div>`
+        : ""
+    }
+  `;
+}
+
 function updateSlide(index, direction = "next") {
   const cardsPerView = getCardsPerView();
-  currentSlide = index % totalSlides;
-  if (currentSlide < 0) currentSlide = totalSlides + currentSlide;
-
+  currentSlide = ((index % totalSlides) + totalSlides) % totalSlides; // wrap around
   updateDots();
 
   const visibleData = getVisibleCards(currentSlide);
-  const cardEls = journeyContainer.querySelectorAll(".journey-content");
+  const cards = journeyContainer.querySelectorAll(".journey-card");
 
-  cardEls.forEach((cardEl, i) => {
-    cardEl.classList.remove(
-      "active",
-      "enter-from-right",
-      "enter-from-left",
-      "exit-left",
-      "exit-right"
+  cards.forEach((card, i) => {
+    const layers = [...card.querySelectorAll(".journey-content")];
+    const activeLayer = layers.find((l) => l.classList.contains("active"));
+    const nextLayer = layers.find((l) => !l.classList.contains("active"));
+
+    // Cancel any previous cleanup timer
+    if (animationTimers.has(card)) clearTimeout(animationTimers.get(card));
+
+    // Fill next layer immediately
+    nextLayer.innerHTML = createCardContent(visibleData[i]);
+
+    // Reset classes
+    layers.forEach((l) =>
+      l.classList.remove(
+        "enter-from-left",
+        "enter-from-right",
+        "exit-left",
+        "exit-right"
+      )
     );
 
-    // Slide out animation if it has content
-    if (cardEl.innerHTML.trim() !== "") {
-      if (direction === "next") cardEl.classList.add("exit-right");
-      else cardEl.classList.add("exit-left");
+    // Animate layers
+    if (direction === "next") {
+      activeLayer.classList.add("exit-left");
+      nextLayer.classList.add("enter-from-right");
+    } else {
+      activeLayer.classList.add("exit-right");
+      nextLayer.classList.add("enter-from-left");
     }
 
-    // Delay to allow exit animation
-    setTimeout(() => {
-      const data = visibleData[i];
-      cardEl.innerHTML = data
-        ? `
-        <div class="journey-card-title">${data.title}</div>
-        <div class="journey-card-description">${data.description}</div>
-        ${
-          data.image
-            ? `<div class="journey-card-image"><img src="${data.image}" alt="${data.title}"></div>`
-            : ""
-        }
-      `
-        : "";
+    // Swap active layer immediately
+    activeLayer.classList.remove("active");
+    nextLayer.classList.add("active");
 
-      // Remove exit classes
-      cardEl.classList.remove("exit-right", "exit-left");
-
-      // Slide in from opposite direction
-      if (direction === "next") cardEl.classList.add("enter-from-left");
-      else cardEl.classList.add("enter-from-right");
-
-      cardEl.classList.add("active");
-    }, 400);
+    // Schedule cleanup of old layer safely
+    const timer = setTimeout(() => {
+      activeLayer.innerHTML = "";
+      activeLayer.classList.remove("exit-left", "exit-right");
+    }, 600);
+    animationTimers.set(card, timer);
   });
 }
 
-// ======= ARROW EVENTS (DESKTOP ONLY) =======
-const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
+// Arrow controls
+document
+  .getElementById("nextBtn")
+  .addEventListener("click", () => updateSlide(currentSlide + 1, "next"));
+document
+  .getElementById("prevBtn")
+  .addEventListener("click", () => updateSlide(currentSlide - 1, "prev"));
 
-function handleArrowsDisplay() {
-  const isMobile = window.innerWidth <= 600;
-  nextBtn.style.display = isMobile ? "none" : "flex";
-  prevBtn.style.display = isMobile ? "none" : "flex";
-}
-
-nextBtn.addEventListener("click", () => updateSlide(currentSlide + 1, "next"));
-prevBtn.addEventListener("click", () => updateSlide(currentSlide - 1, "prev"));
-
-// ======= MOBILE SWIPE SUPPORT =======
+// Swipe for mobile
 let startX = 0;
-let isDragging = false;
-
-journeyContainer.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-  isDragging = true;
-});
-
+journeyContainer.addEventListener(
+  "touchstart",
+  (e) => (startX = e.touches[0].clientX)
+);
 journeyContainer.addEventListener("touchend", (e) => {
-  if (!isDragging) return;
-  isDragging = false;
   const diffX = e.changedTouches[0].clientX - startX;
-
-  if (diffX > 50) updateSlide(currentSlide - 1, "prev"); // swipe right
-  else if (diffX < -50) updateSlide(currentSlide + 1, "next"); // swipe left
+  if (diffX > 50) updateSlide(currentSlide - 1, "prev");
+  if (diffX < -50) updateSlide(currentSlide + 1, "next");
 });
 
-// ======= WINDOW RESIZE =======
+// Resize handling
 window.addEventListener("resize", () => {
-  handleArrowsDisplay();
-  updateSlide(currentSlide, "next"); // recalc visible cards
+  updateSlide(currentSlide, "next");
 });
 
-// ======= INITIALIZE =======
+// Initialize
 renderDots();
-handleArrowsDisplay();
 updateSlide(0, "next");
+
+// FAQ
+const faqContainer = document.getElementById("faqContainer");
+
+// Dynamically generate FAQ items
+faqData.forEach((faq) => {
+  const faqItem = document.createElement("div");
+  faqItem.classList.add("faq-item");
+
+  faqItem.innerHTML = `
+    <button class="faq-question">
+      <span>${faq.question}</span>
+      <span class="faq-arrow"></span>
+    </button>
+    <div class="faq-answer">${faq.answer}</div>
+  `;
+
+  faqContainer.appendChild(faqItem);
+});
+
+// Add toggle functionality
+faqContainer.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("faq-question") ||
+    e.target.closest(".faq-question")
+  ) {
+    const item = e.target.closest(".faq-item");
+    item.classList.toggle("active");
+  }
+});
 
 //  CREATE TESTIMONIAL CARD
 function createTestimonialCard(testimonial) {
@@ -421,27 +416,6 @@ function renderTestimonials() {
   });
 
   // STATS BAR
-
-  // function animateNumber(element, duration = 2000) {
-  //   const target = +element.getAttribute("data-target");
-  //   const suffix = element.getAttribute("data-suffix") || "";
-  //   let start = 0;
-  //   const increment = target / (duration / 16); // approx 60fps, increment per frame
-
-  //   function update() {
-  //     start += increment;
-  //     if (start < target) {
-  //       // Display rounded integer number
-  //       element.textContent = Math.floor(start).toLocaleString() + suffix;
-  //       requestAnimationFrame(update);
-  //     } else {
-  //       // Ensure it ends exactly on target
-  //       element.textContent = target.toLocaleString() + suffix;
-  //     }
-  //   }
-
-  //   update();
-  // }
 
   function animateNumber(element, duration = 2000) {
     const target = +element.getAttribute("data-target");
