@@ -187,6 +187,7 @@ const journeyContainer = document.getElementById("journeyContainer");
 const dotsContainer = document.getElementById("dots");
 const totalSlides = journeyData.length;
 const animationTimers = new WeakMap();
+
 function getCardsPerView() {
   return window.innerWidth <= 600 ? 1 : 3;
 }
@@ -229,13 +230,40 @@ function createCardContent(data) {
   `;
 }
 
+function initializeJourneyCards() {
+  journeyContainer.innerHTML = "";
+  const cardsPerView = getCardsPerView();
+
+  for (let i = 0; i < cardsPerView; i++) {
+    const card = document.createElement("div");
+    card.className = "journey-card";
+
+    // Create two content layers for animation
+    const layer1 = document.createElement("div");
+    layer1.className = "journey-content active";
+
+    const layer2 = document.createElement("div");
+    layer2.className = "journey-content";
+
+    card.appendChild(layer1);
+    card.appendChild(layer2);
+    journeyContainer.appendChild(card);
+  }
+}
+
 function updateSlide(index, direction = "next") {
   const cardsPerView = getCardsPerView();
-  currentSlide = ((index % totalSlides) + totalSlides) % totalSlides; // wrap around
+  currentSlide = ((index % totalSlides) + totalSlides) % totalSlides;
   updateDots();
 
   const visibleData = getVisibleCards(currentSlide);
   const cards = journeyContainer.querySelectorAll(".journey-card");
+
+  // Ensure cards exist before trying to update them
+  if (cards.length === 0) {
+    initializeJourneyCards();
+    return updateSlide(index, direction);
+  }
 
   cards.forEach((card, i) => {
     const layers = [...card.querySelectorAll(".journey-content")];
@@ -246,7 +274,9 @@ function updateSlide(index, direction = "next") {
     if (animationTimers.has(card)) clearTimeout(animationTimers.get(card));
 
     // Fill next layer immediately
-    nextLayer.innerHTML = createCardContent(visibleData[i]);
+    if (visibleData[i]) {
+      nextLayer.innerHTML = createCardContent(visibleData[i]);
+    }
 
     // Reset classes
     layers.forEach((l) =>
@@ -283,10 +313,10 @@ function updateSlide(index, direction = "next") {
 // Arrow controls
 document
   .getElementById("nextBtn")
-  .addEventListener("click", () => updateSlide(currentSlide + 1, "next"));
+  ?.addEventListener("click", () => updateSlide(currentSlide + 1, "next"));
 document
   .getElementById("prevBtn")
-  .addEventListener("click", () => updateSlide(currentSlide - 1, "prev"));
+  ?.addEventListener("click", () => updateSlide(currentSlide - 1, "prev"));
 
 // Swipe for mobile
 let startX = 0;
@@ -302,12 +332,28 @@ journeyContainer.addEventListener("touchend", (e) => {
 
 // Resize handling
 window.addEventListener("resize", () => {
+  initializeJourneyCards();
   updateSlide(currentSlide, "next");
 });
 
-// Initialize
-renderDots();
-updateSlide(0, "next");
+// Initialize journey section
+function initializeJourneySection() {
+  renderDots();
+  initializeJourneyCards();
+  updateSlide(0, "next");
+}
+
+// Call this when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+  initializeJourneySection();
+});
+
+// Also call it immediately in case DOM is already loaded
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeJourneySection);
+} else {
+  initializeJourneySection();
+}
 
 // FAQ
 const faqContainer = document.getElementById("faqContainer");
