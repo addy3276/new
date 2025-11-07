@@ -3,109 +3,83 @@ const testimonials = [
   {
     company: "City Manager, Meraki Spa & Blends",
     quote:
-      " ⭐️⭐️⭐️⭐️⭐️I discovered Telecrm to be notably superior in efficiency. It grants me unparalleled insight into the performance of each sales representative.",
+      "I discovered Telecrm to be notably superior in efficiency. It grants me unparalleled insight into the performance of each sales representative.",
     name: "Bhupendra Adhikari",
     role: "",
     profileImage: "images/Bhupendra Adhikari.png",
-    // link: "",
-    // linkType: "",
-    // screenshotImage:
-    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+    rating: "⭐️⭐️⭐️⭐️⭐️",
   },
   {
     company: " Paper Planes",
     quote:
-      "⭐️⭐️⭐️⭐️⭐️With Telecrm, after-sales service has been top-notch. The response has been quite good, and I always receive timely service.",
+      "With Telecrm, after-sales service has been top-notch. The response has been quite good, and I always receive timely service.",
     name: "Dr. Prashant Belchandan",
     role: "Product Manager at TechCorp",
     profileImage: "images/Dr. Prashant Belchandan.png",
-    // link: "https://linkedin.com",
-    // linkType: "google",
-    // screenshotImage:
-    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+    rating: "⭐️⭐️⭐️⭐️⭐️",
   },
   {
     company: "Owner, Ideal Dealers Private Limited",
     quote:
-      " ⭐️⭐️⭐️⭐️One of the biggest improvements has been field team tracking. We can now instantly see how many client visits happened each day and which team member visited whom.",
+      " One of the biggest improvements has been field team tracking. We can now instantly see how many client visits happened each day and which team member visited whom.",
     name: "Keshav",
     role: "Owner",
     profileImage: "images/Keshav.png",
-    // link: "https://www.youtube.com/embed/OW25eaCeEjA?autoplay=1&mute=0",
-    // linkType: "video",
-    // screenshotImage: "	https://telecrm.in/assets/images/testimonial/w2.jpg",
+    rating: "⭐️⭐️⭐️⭐️",
   },
   {
     company: "Villazio Hospitality",
     quote:
-      " ⭐️⭐️⭐️⭐️⭐️ Brilliant software! Well made. The support and training is mind-blowing. Never seen such care and concern by an after-sales team.",
+      "  Brilliant software! Well made. The support and training is mind-blowing. Never seen such care and concern by an after-sales team.",
     name: "Akhtar Khan",
     role: "Founder",
     profileImage: "images/Akhtar Khan.png",
-    // link: "https://linkedin.com",
-    // linkType: "google",
-    // screenshotImage:
-    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+    rating: "⭐️⭐️⭐️⭐️⭐️",
   },
   {
     company: " Singh Apple Orchids",
     quote:
-      " ⭐️⭐️⭐️No need to check on the callers. Calling is quicker and easier than ever! Manager ka kaam kaafi simple ho gaya.",
+      "No need to check on the callers. Calling is quicker and easier than ever! Manager ka kaam kaafi simple ho gaya.",
     name: "Raaj Perhaate",
     role: "Founder of Bright Solutions",
     profileImage: "images/Raaj Perhaate.png",
-    // link: "https://linkedin.com",
-    // linkType: "google",
-    // screenshotImage:
-    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+    rating: "⭐️⭐️⭐️",
   },
   {
     company: "Yamaha Motor Solutions India Pvt. Ltd.",
     quote:
-      "⭐️⭐️⭐️⭐️It’s a fantastic CRM that I’ve explored so far! The self-customisation features are unique. Also, their support team is awesome.",
+      "It’s a fantastic CRM that I’ve explored so far! The self-customisation features are unique. Also, their support team is awesome.",
     name: "Vir Bharat",
     role: " Head HR Business Partner",
     profileImage: "images/Vir Bharat.png",
-    // link: "https://linkedin.com",
-    // linkType: "google",
-    // screenshotImage:
-    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+    rating: "⭐️⭐️⭐️⭐️",
   },
   {
     company: "India Studies",
     quote:
-      "⭐️⭐️⭐️⭐️⭐️Aap log bohot acha kar rahe ho, amazing job. Your software is amazing, no doubt. Hardly kabhi problem aati hai. Things are good…..",
+      "Aap log bohot acha kar rahe ho, amazing job. Your software is amazing, no doubt. Hardly kabhi problem aati hai. Things are good…..",
     name: "Ananya Hemani",
     role: " Co-founder,",
     profileImage: "images/Ananya Hemani.png",
-    // link: "https://linkedin.com",
-    // linkType: "google",
-    // screenshotImage:
-    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+    rating: "⭐️⭐️⭐️⭐️⭐️",
   },
   {
     company: "Brikitt Proptech Pvt. Ltd.",
     quote:
-      "⭐️⭐️⭐️⭐️⭐️Telecrm has truly transformed the way we manage our sales. It's streamlined our entire process, making follow-ups, lead tracking, and communication far more efficient.",
+      "Telecrm has truly transformed the way we manage our sales. It's streamlined our entire process, making follow-ups, lead tracking, and communication far more efficient.",
     name: "Mohammad Salman",
     role: " Head – CRM, ",
     profileImage: "images/Mohammad Salman.png",
-    // link: "https://linkedin.com",
-    // linkType: "google",
-    // screenshotImage:
-    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+    rating: "⭐️⭐️⭐️⭐️⭐️",
   },
   {
     company: "Osaka Group",
     quote:
-      " ⭐️⭐️⭐️⭐️⭐️I was able to train my entire team within a short span of time because of its simplicity. Telecrm has helped us bring structure to our lead management process across verticals.",
+      "I was able to train my entire team within a short span of time because of its simplicity. Telecrm has helped us bring structure to our lead management process across verticals.",
     name: "Saranya",
     role: " Customer Relations Manager",
     profileImage: "images/Saranya.png",
-    // link: "https://linkedin.com",
-    // linkType: "google",
-    // screenshotImage:
-    //   "	https://telecrm.in/assets/images/testimonial/g5theertha.png",
+    rating: "⭐️⭐️⭐️⭐️⭐️",
   },
 ];
 
@@ -386,6 +360,68 @@ faqContainer.addEventListener("click", (e) => {
 });
 
 //  CREATE TESTIMONIAL CARD
+// function createTestimonialCard(testimonial) {
+//   const card = document.createElement("div");
+//   card.className = "testimonial-card";
+
+//   let screenshotHTML = testimonial.screenshotImage
+//     ? `
+//       <div class="testimonial-screenshot">
+//         <img src="${testimonial.screenshotImage}" alt="Screenshot from ${testimonial.name}">
+//       </div>
+//     `
+//     : "";
+
+//   let quoteHTML = "";
+//   if (testimonial.quote) {
+//     quoteHTML = `
+//       <div class="testimonial-quote-container">
+//         <p class="testimonial-quote">${testimonial.quote}
+//           <span class="read-more"
+//             data-company="${testimonial.company}"
+//             data-name="${testimonial.name}"
+//             data-role="${testimonial.role}"
+//             data-quote="${testimonial.quote}"
+//             data-profile="${testimonial.profileImage}"
+//             data-link="${testimonial.link || ""}"
+//             data-type="${testimonial.linkType || ""}"
+//           > Read More</span>
+//         </p>
+//       </div>
+//     `;
+//   }
+
+//   let linkHTML = testimonial.link
+//     ? `
+//       <button class="testimonial-link-button" data-link="${
+//         testimonial.link
+//       }" data-type="${testimonial.linkType}">
+//         <img src="${icons[testimonial.linkType]}" alt="link">
+//         <span>${tooltips[testimonial.linkType]}</span>
+//       </button>
+//     `
+//     : "";
+
+//   card.innerHTML = `
+//     <h2 class="testimonial-company">${testimonial.company}</h2>
+//     ${quoteHTML}
+//     ${screenshotHTML}
+//     <div class="testimonial-footer">
+//       <div class="testimonial-author">
+//         <img src="${testimonial.profileImage}" alt="Profile picture of ${testimonial.name}" class="testimonial-profile-image">
+//         <div class="testimonial-author-info">
+//           <h3>${testimonial.name}</h3>
+//           <p>${testimonial.role}</p>
+//         </div>
+//       </div>
+//       ${linkHTML}
+//     </div>
+//   `;
+
+//   return card;
+// }
+//  CREATE TESTIMONIAL CARD
+//  CREATE TESTIMONIAL CARD
 function createTestimonialCard(testimonial) {
   const card = document.createElement("div");
   card.className = "testimonial-card";
@@ -411,6 +447,7 @@ function createTestimonialCard(testimonial) {
             data-profile="${testimonial.profileImage}"
             data-link="${testimonial.link || ""}"
             data-type="${testimonial.linkType || ""}"
+            data-rating="${testimonial.rating || ""}"
           > Read More</span>
         </p>
       </div>
@@ -434,10 +471,17 @@ function createTestimonialCard(testimonial) {
     ${screenshotHTML}
     <div class="testimonial-footer">
       <div class="testimonial-author">
-        <img src="${testimonial.profileImage}" alt="Profile picture of ${testimonial.name}" class="testimonial-profile-image">
+        <img src="${testimonial.profileImage}" alt="Profile picture of ${
+    testimonial.name
+  }" class="testimonial-profile-image">
         <div class="testimonial-author-info">
           <h3>${testimonial.name}</h3>
           <p>${testimonial.role}</p>
+          ${
+            testimonial.rating
+              ? `<div class="testimonial-rating">${testimonial.rating}</div>`
+              : ""
+          }
         </div>
       </div>
       ${linkHTML}
@@ -577,12 +621,19 @@ let scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 function openTestimonialModal(data) {
   modalCompany.textContent = data.company;
   modalQuote.textContent = data.quote;
+
   modalAuthor.innerHTML = `
     <div style="display:flex;align-items:center;gap:0.75rem;margin-top:1rem;">
-      <img src="${data.profile}" style="width:2.5rem;height:2.5rem;border-radius:9999px;object-fit:cover;">
-      <div>
-        <h3 style="font-weight:600;font-size:0.875rem;">${data.name}</h3>
-        <p style="font-size:0.75rem;color:#6b7280;">${data.role}</p>
+      <img src="${data.profile}" 
+           style="width:5rem;height:5rem;border-radius:9999px;object-fit:cover;">
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:0.3rem;line-height:1.3;">
+        <h3 style="font-weight:600;font-size:1rem;margin:0;">${data.name}</h3>
+        <p style="font-size:0.95rem;color:#6b7280;margin:0;">${data.role}</p>
+        ${
+          data.rating
+            ? `<div class="testimonial-rating" style="font-size:1rem;line-height:1;margin:0;">${data.rating}</div>`
+            : ""
+        }
       </div>
     </div>
   `;
@@ -629,6 +680,7 @@ document.addEventListener("click", (e) => {
       profile: readMore.dataset.profile,
       link: readMore.dataset.link,
       type: readMore.dataset.type,
+      rating: readMore.dataset.rating,
     };
     openTestimonialModal(data);
     return;
