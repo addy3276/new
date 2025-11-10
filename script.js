@@ -360,68 +360,6 @@ faqContainer.addEventListener("click", (e) => {
 });
 
 //  CREATE TESTIMONIAL CARD
-// function createTestimonialCard(testimonial) {
-//   const card = document.createElement("div");
-//   card.className = "testimonial-card";
-
-//   let screenshotHTML = testimonial.screenshotImage
-//     ? `
-//       <div class="testimonial-screenshot">
-//         <img src="${testimonial.screenshotImage}" alt="Screenshot from ${testimonial.name}">
-//       </div>
-//     `
-//     : "";
-
-//   let quoteHTML = "";
-//   if (testimonial.quote) {
-//     quoteHTML = `
-//       <div class="testimonial-quote-container">
-//         <p class="testimonial-quote">${testimonial.quote}
-//           <span class="read-more"
-//             data-company="${testimonial.company}"
-//             data-name="${testimonial.name}"
-//             data-role="${testimonial.role}"
-//             data-quote="${testimonial.quote}"
-//             data-profile="${testimonial.profileImage}"
-//             data-link="${testimonial.link || ""}"
-//             data-type="${testimonial.linkType || ""}"
-//           > Read More</span>
-//         </p>
-//       </div>
-//     `;
-//   }
-
-//   let linkHTML = testimonial.link
-//     ? `
-//       <button class="testimonial-link-button" data-link="${
-//         testimonial.link
-//       }" data-type="${testimonial.linkType}">
-//         <img src="${icons[testimonial.linkType]}" alt="link">
-//         <span>${tooltips[testimonial.linkType]}</span>
-//       </button>
-//     `
-//     : "";
-
-//   card.innerHTML = `
-//     <h2 class="testimonial-company">${testimonial.company}</h2>
-//     ${quoteHTML}
-//     ${screenshotHTML}
-//     <div class="testimonial-footer">
-//       <div class="testimonial-author">
-//         <img src="${testimonial.profileImage}" alt="Profile picture of ${testimonial.name}" class="testimonial-profile-image">
-//         <div class="testimonial-author-info">
-//           <h3>${testimonial.name}</h3>
-//           <p>${testimonial.role}</p>
-//         </div>
-//       </div>
-//       ${linkHTML}
-//     </div>
-//   `;
-
-//   return card;
-// }
-//  CREATE TESTIMONIAL CARD
-//  CREATE TESTIMONIAL CARD
 function createTestimonialCard(testimonial) {
   const card = document.createElement("div");
   card.className = "testimonial-card";
@@ -436,19 +374,34 @@ function createTestimonialCard(testimonial) {
 
   let quoteHTML = "";
   if (testimonial.quote) {
+    const maxChars = 100;
+    const needsTruncation = testimonial.quote.length > maxChars;
+
+    let displayQuote = testimonial.quote;
+    if (needsTruncation) {
+      // Truncate at word boundary
+      const truncated = testimonial.quote.substring(0, maxChars);
+      const lastSpace = truncated.lastIndexOf(" ");
+      displayQuote =
+        (lastSpace > 0 ? truncated.substring(0, lastSpace) : truncated) + "...";
+    }
+
     quoteHTML = `
       <div class="testimonial-quote-container">
-        <p class="testimonial-quote">${testimonial.quote}
-          <span class="read-more"
-            data-company="${testimonial.company}"
-            data-name="${testimonial.name}"
-            data-role="${testimonial.role}"
-            data-quote="${testimonial.quote}"
+        <p class="testimonial-quote">${displayQuote}${
+      needsTruncation
+        ? `<span class="read-more"
+            data-company="${testimonial.company.replace(/"/g, "&quot;")}"
+            data-name="${testimonial.name.replace(/"/g, "&quot;")}"
+            data-role="${testimonial.role.replace(/"/g, "&quot;")}"
+            data-quote="${testimonial.quote.replace(/"/g, "&quot;")}"
             data-profile="${testimonial.profileImage}"
             data-link="${testimonial.link || ""}"
             data-type="${testimonial.linkType || ""}"
             data-rating="${testimonial.rating || ""}"
-          > Read More</span>
+          > Read More</span>`
+        : ""
+    }
         </p>
       </div>
     `;
@@ -497,7 +450,6 @@ function playVideo() {
 }
 
 // RENDER TESTIMONIALS
-
 function renderTestimonials() {
   const grid = document.getElementById("testimonialGrid");
   testimonials.forEach((testimonial) => {
@@ -506,7 +458,6 @@ function renderTestimonials() {
   });
 
   // STATS BAR
-
   function animateNumber(element, duration = 2000) {
     const target = +element.getAttribute("data-target");
     const suffix = element.getAttribute("data-suffix") || "";
@@ -546,31 +497,13 @@ function renderTestimonials() {
     { threshold: 0.5 }
   );
 
-  observer.observe(statsSection);
+  if (statsSection) {
+    observer.observe(statsSection);
+  }
 
   // Animate all stat numbers on page load
   document.querySelectorAll(".stat-number").forEach((el) => {
     animateNumber(el);
-  });
-
-  // After rendering, hide "Read More" if not needed
-  filterReadMoreVisibility();
-}
-
-//  CHECK & HIDE SHORT QUOTES
-function filterReadMoreVisibility() {
-  const quotes = document.querySelectorAll(".testimonial-quote");
-  quotes.forEach((quote) => {
-    const readMore = quote.querySelector(".read-more");
-    const text = quote.textContent.replace("Read More", "").trim();
-    const wordCount = text.split(/\s+/).length;
-    const lineHeight = parseFloat(getComputedStyle(quote).lineHeight);
-    const maxHeight = lineHeight * 2;
-    const isOverflowing = quote.scrollHeight > maxHeight;
-
-    if (wordCount <= 12 && !isOverflowing) {
-      readMore.style.display = "none";
-    }
   });
 }
 
