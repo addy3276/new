@@ -41,7 +41,7 @@ const testimonials = [
     quote:
       "No need to check on the callers. Calling is quicker and easier than ever! Manager ka kaam kaafi simple ho gaya.",
     name: "Raaj Perhaate",
-    role: "Founder of Bright Solutions",
+    role: "",
     profileImage: "images/Raaj Perhaate.png",
     rating: "⭐️⭐️⭐️",
   },
