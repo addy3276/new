@@ -175,29 +175,31 @@
              </button>
            </div>
         </div>
-        <div class="video-side">
-            <div class="video-container">
-                  <video 
-                    class="hero-video"
-                    autoplay
-                    loop
-                    muted
-                    playsinline
-                    disableRemotePlayback
-                    preload="auto"
-                    webkit-playsinline="true"
-                    x-webkit-airplay="deny"
-                >
-                    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-          </div>
-        </div>
+    <div class="video-side">
+  <div class="video-container">
+    <video 
+      id="heroVideo"
+      class="hero-video"
+      muted
+      loop
+      playsinline
+      preload="auto"
+      webkit-playsinline="true"
+      x-webkit-airplay="deny"
+    >
+      <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button id="heroPlayBtn" class="hero-play-btn">
+      <img src="https://img.youtube.com/vi/CCDRBTYSo6c/hqdefault.jpg" alt="Video Thumbnail">
+      <span class="play-icon">▶</span>
+    </button>
+  </div>
+</div>
+ </div>
     </div>
 </section>
 
-
 <!-- Your existing video modal -->
 <div class="video-modal" id="videoModal">
   <div class="video-modal-overlay">
@@ -220,26 +222,7 @@
 </div>
 
 
-<!-- Your existing video modal -->
-<div class="video-modal" id="videoModal">
-  <div class="video-modal-overlay">
-    <div class="video-modal-content-wrapper">
-      <div class="video-modal-container">
-        <button class="video-modal-close" id="closeModal">× Close</button>
-        <div class="video-wrapper">
-          <iframe
-            id="videoIframe"
-            src=""
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            title="Video"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!-- STATS -->
 <div class="stats-section">
@@ -303,17 +286,16 @@
   </div>
 </div>
 <!-- Case  -->
- <div class="client-section">
+ <!-- <div class="client-section">
   <h1 class="client-heading">Case Studies Cards</h1>
   <div class="carousel-wrapper">
-    <!-- Arrows -->
+
     <div class="nav-arrow nav-arrow-left" id="prevBtn">
       <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
         <path d="M15 18L9 12L15 6" stroke="#4F38A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     </div>
    <div class="journey-container" id="journeyContainer">
-      <!-- 3 card slots -->
       <div class="journey-card">
         <div class="journey-content layer-a active"></div>
         <div class="journey-content layer-b"></div>
@@ -334,7 +316,7 @@
     </div>
   </div>
   <div class="dots" id="dots"></div>
-</div>
+</div> -->
 
 <!-- FAQ  -->
 <div class="client-section">
