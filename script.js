@@ -5,7 +5,7 @@ const testimonials = [
     quote:
       "I discovered Telecrm to be notably superior in efficiency. It grants me unparalleled insight into the performance of each sales representative.",
     name: "Bhupendra Adhikari",
-    role: "",
+    role: " City Manager",
     profileImage: "images/Bhupendra Adhikari.png",
     rating: "⭐️⭐️⭐️⭐️⭐️",
   },
@@ -14,12 +14,12 @@ const testimonials = [
     quote:
       "With Telecrm, after-sales service has been top-notch. The response has been quite good, and I always receive timely service.",
     name: "Dr. Prashant Belchandan",
-    role: "Product Manager at TechCorp",
+    role: "",
     profileImage: "images/Dr. Prashant Belchandan.png",
     rating: "⭐️⭐️⭐️⭐️⭐️",
   },
   {
-    company: "Owner, Ideal Dealers Private Limited",
+    company: "Ideal Dealers Private Limited",
     quote:
       " One of the biggest improvements has been field team tracking. We can now instantly see how many client visits happened each day and which team member visited whom.",
     name: "Keshav",
@@ -59,7 +59,7 @@ const testimonials = [
     quote:
       "Aap log bohot acha kar rahe ho, amazing job. Your software is amazing, no doubt. Hardly kabhi problem aati hai. Things are good…..",
     name: "Ananya Hemani",
-    role: " Co-founder,",
+    role: " Co-founder",
     profileImage: "images/Ananya Hemani.png",
     rating: "⭐️⭐️⭐️⭐️⭐️",
   },
@@ -68,7 +68,7 @@ const testimonials = [
     quote:
       "Telecrm has truly transformed the way we manage our sales. It's streamlined our entire process, making follow-ups, lead tracking, and communication far more efficient.",
     name: "Mohammad Salman",
-    role: " Head – CRM, ",
+    role: " Head – CRM",
     profileImage: "images/Mohammad Salman.png",
     rating: "⭐️⭐️⭐️⭐️⭐️",
   },
